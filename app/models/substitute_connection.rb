@@ -1,0 +1,2 @@
+class SubstituteConnection < ApplicationRecord
+end
