@@ -1,2 +1,3 @@
 class JointCategory < ApplicationRecord
+  
 end

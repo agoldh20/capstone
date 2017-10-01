@@ -117,8 +117,56 @@
 # Ingredient.create!(name: "Olive Oil")
 # Ingredient.create!(name: "Canola Oil")
 
-Recipe.create!(title: "Bacon Wrapped Filet", chef: "Adam", directions: "Wrap Filet in Bacon")
-Recipe.create!(title: "Corned Beef Hash with Cheese", chef: "Adam", directions: "cook")
+# Recipe.create!(title: "Bacon Wrapped Filet", chef: "Adam", directions: "Wrap Filet in Bacon")
+# Recipe.create!(title: "Corned Beef Hash with Cheese", chef: "Adam", directions: "cook")
+
+# Ingredient.create!(name: "Toasted Garlic Bread Crumbs")
+
+# meatloaf = Recipe.create!(title: "Meatloaf", chef: "Adam")
+# ingredients = ["Ground Beef", "Bacon", "Salt", "Pepper", "Parmesan", "Parsley", "Eggs", "White Bread", "Whole Milk"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: meatloaf.id, ingredient_id: ingredient.id)
+# end
+
+# ingredients = ["Bacon", "Prime Rib", "Salt", "Pepper", "Butter"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: 1, ingredient_id: ingredient.id)
+# end
+
+# pan_fried_cod = Recipe.create!(title: "Pan Fried Cod", chef: "Adam")
+# ingredients = ["Eggs", "Whole Milk", "Cod", "Flour", "Cracker Crumbs", "Salt", "Cayenne Pepper", "Vegetable Oil"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: pan_fried_cod.id, ingredient_id: ingredient.id)
+# end
+
+# marinated_pork_tenderloin = Recipe.create!(title: "Marinated Pork Tenderloin", chef: "Adam")
+# ingredients = ["Pork Tenderloin", "Soy Sauce", "Sherry", "Honey", "Rice Wine Vinegar", "Vegetable Oil", "Orange Juice", "Rosemary", "Shallots", "Ginger"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: 5, ingredient_id: ingredient.id)
+# end
+
+# ingredients = ["Potato", "Corned Beef", "Butter", "Olive Oil", "Onion", "Garlic", "Salt", "Pepper"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: 2, ingredient_id: ingredient.id)
+# end
+
+# beef_stroganoff = Recipe.create!(title: "Beef Stroganoff", chef: "Adam")
+# ingredients = ["Ground Beef", "Noodles", "Brown Gravy", "Cream Cheese", "Mushrooms", "Sour Cream", "Cream of Mushroom Soup"]
+# ingredients.each do |ingredient|
+#   ingredient = Ingredient.find_or_create_by(name: ingredient)
+#   RecipeIngredient.create!(recipe_id: beef_stroganoff.id, ingredient_id: ingredient.id)
+# end
+
+
+
+
+
+
 
 
 

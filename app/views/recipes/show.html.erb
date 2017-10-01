@@ -1,5 +1,14 @@
 <h2><%= @recipe.title %></h2>
 <a href="<%= @recipe.image_url %>"></a>
 <h4>Created by Chef <%= @recipe.chef %></h4>
+<% @recipe.ingredients.each do |ingredient| %>
+  <ul>
+<li><h4><%= ingredient.name %></h4></li>
+</ul>
+<% end %>
 <h3>Directions:</h3>
-<h4><%= @recipe.directions %></h4>
+  <%= @recipe.directions.each do |direction| %>
+  <ol>
+    <li><%= direction %></li>
+  </ol>
+<% end %>
