@@ -1,14 +1,28 @@
 <h2><%= @recipe.title %></h2>
+<img src= <%= @recipe.image_url %> >
+<br>
+<a href="/recipes/<%= @recipe.id %>?diet_preference=meat">Meat Substitute</a>
+<a href="/recipes/<%= @recipe.id %>?diet_preference=dairy">Dairy Substitute</a>
+<a href="/recipes/<%= @recipe.id %>">Revert</a>
 <a href="<%= @recipe.image_url %>"></a>
 <h4>Created by Chef <%= @recipe.chef %></h4>
-<% @recipe.ingredients.each do |ingredient| %>
-  <ul>
-<li><h4><%= ingredient.name %></h4></li>
+<ul>
+<% @ingredients.each do |ingredient| %>
+    <li>
+    <% if @diet_preference == "meat" && ingredient.meat_sub %>
+      <h4><%= ingredient.meat_sub.name %></h4>
+    <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
+      <h4><%= ingredient.dairy_sub.name %></h4>
+    <% else %>
+      <h4><%= ingredient.name %></h4>
+    <% end %>
+</li>
+<% end %>
 </ul>
-<% end %>
 <h3>Directions:</h3>
-  <%= @recipe.directions.each do |direction| %>
-  <ol>
+<ol>
+ <% @directions.each do |direction| %>
     <li><%= direction %></li>
-  </ol>
-<% end %>
+ <% end %>
+</ol>
+

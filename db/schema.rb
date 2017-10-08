@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928185147) do
+ActiveRecord::Schema.define(version: 20171003220139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20170928185147) do
 
   create_table "substitute_connections", force: :cascade do |t|
     t.integer "original_food_id"
-    t.integer "substitution_id"
     t.integer "diet_preference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sub_id"
   end
 
   create_table "users", force: :cascade do |t|
