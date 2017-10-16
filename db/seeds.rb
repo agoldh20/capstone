@@ -54,3 +54,4 @@
 # SubstituteConnection.create!(original_food_id: 121,diet_preference: 1, sub_id: 6)
 
 
+Recipes.create!
