@@ -10,11 +10,11 @@
 <% @ingredients.each do |ingredient| %>
     <li>
     <% if @diet_preference == "meat" && ingredient.meat_sub %>
-      <h4><%= ingredient.meat_sub.name %></h4>
+      <h4><%= ingredient.meat_sub.name.titleize %></h4>
     <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
-      <h4><%= ingredient.dairy_sub.name %></h4>
+      <h4><%= ingredient.dairy_sub.name.titleize %></h4>
     <% else %>
-      <h4><%= ingredient.name %></h4>
+      <h4><%= ingredient.name.titleize %></h4>
     <% end %>
 </li>
 <% end %>

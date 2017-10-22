@@ -1,13 +1,13 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Unirest.get("https://api2.bigoven.com/collections?api_key=#{ENV['api_key']}")
-    p @recipes
+    @recipes = Recipe.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
     @diet_preference = params[:diet_preference]
     @ingredients = @recipe.ingredients
+    @directions = @recipe.directions
 
     if @diet_preference == "meat"
       @directions = @recipe.meat_directions

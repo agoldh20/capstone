@@ -9,7 +9,7 @@ class Recipe < ApplicationRecord
     ingredients.each do |ingredient|
       substitute_food = ingredient.meat_sub
       if substitute_food
-        altered_directions.gsub!(/#{ingredient.name}i/, substitute_food.name)
+        altered_directions.gsub!(/#{ingredient.name}/i, substitute_food.name)
       end
     end
     altered_directions.split(".")
@@ -23,10 +23,14 @@ class Recipe < ApplicationRecord
         altered_directions.gsub!(/#{ingredient.name}/i, substitute_food.name)
       end
     end
-    altered_directions.split(".")
+   altered_directions.split(".")     
   end
 
   def pretty_directions
-    directions.split(".")
+   directions.split(".")
+  end
+
+  def method_name
+    
   end
 end

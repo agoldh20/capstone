@@ -1,57 +1,90 @@
-# SubstituteConnection.create!(original_food_id: 1,diet_preference: 2, sub_id: 118)
-# SubstituteConnection.create!(original_food_id: 2,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 3,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 4,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 5,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 6,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 7,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 8,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 9,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 10,diet_preference: 1, sub_id: 3)
-# SubstituteConnection.create!(original_food_id: 10,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 11,diet_preference: 1, sub_id: 9)
-# SubstituteConnection.create!(original_food_id: 11,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 12,diet_preference: 1, sub_id: 48)
-# SubstituteConnection.create!(original_food_id: 12,diet_preference: 2, sub_id: 122)
-# SubstituteConnection.create!(original_food_id: 13,diet_preference: 1, sub_id: 52)
-# SubstituteConnection.create!(original_food_id: 13,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 14,diet_preference: 1, sub_id: 7)
-# SubstituteConnection.create!(original_food_id: 15,diet_preference: 1, sub_id: 7)
-# SubstituteConnection.create!(original_food_id: 16,diet_preference: 1, sub_id: 6)
-# SubstituteConnection.create!(original_food_id: 17,diet_preference: 1, sub_id: 7)
-# SubstituteConnection.create!(original_food_id: 18,diet_preference: 1, sub_id: 6)
-# SubstituteConnection.create!(original_food_id: 18,diet_preference: 2, sub_id: 101)
-# SubstituteConnection.create!(original_food_id: 19,diet_preference: 1, sub_id: 6)
-# SubstituteConnection.create!(original_food_id: 19,diet_preference: 2, sub_id: 121)
-# SubstituteConnection.create!(original_food_id: 20,diet_preference: 1, sub_id: 2)
-# SubstituteConnection.create!(original_food_id: 20,diet_preference: 2, sub_id: 101)
-# SubstituteConnection.create!(original_food_id: 48,diet_preference: 2, sub_id: 122)
-# SubstituteConnection.create!(original_food_id: 49,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 50,diet_preference: 2, sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 51,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 52,diet_preference: 2, sub_id: 15)
-# SubstituteConnection.create!(original_food_id: 66,diet_preference: 1, sub_id: 125)
-# SubstituteConnection.create!(original_food_id: 67,diet_preference: 1, sub_id: 126)
-# SubstituteConnection.create!(original_food_id: 68,diet_preference: 1, sub_id: 124)
-# SubstituteConnection.create!(original_food_id: 69,diet_preference: 1, sub_id: 127)
-# SubstituteConnection.create!(original_food_id: 70,diet_preference: 1, sub_id: 120)
-# SubstituteConnection.create!(original_food_id: 71,diet_preference: 1, sub_id: 73)
-# SubstituteConnection.create!(original_food_id: 72,diet_preference: 1, sub_id: 73)
-# SubstituteConnection.create!(original_food_id: 77,diet_preference: 2, sub_id: 81)
-# SubstituteConnection.create!(original_food_id: 78,diet_preference: 2, sub_id: 81)
-# SubstituteConnection.create!(original_food_id: 79,diet_preference: 1, sub_id: 78)
-# SubstituteConnection.create!(original_food_id: 79,diet_preference: 2, sub_id: 81)
-# SubstituteConnection.create!(original_food_id: 80,diet_preference: 1, sub_id: 81)
-# SubstituteConnection.create!(original_food_id: 99,diet_preference: 1, sub_id: 98)
-# SubstituteConnection.create!(original_food_id: 100,diet_preference: 1, sub_id: 128)
-# SubstituteConnection.create!(original_food_id: 103,diet_preference: 1, sub_id: 3)
-# SubstituteConnection.create!(original_food_id: 103,diet_preference: 2,  sub_id: 119)
-# SubstituteConnection.create!(original_food_id: 105,diet_preference: 1, sub_id: 129)
-# SubstituteConnection.create!(original_food_id: 105,diet_preference: 2,  sub_id: 129)
-# SubstituteConnection.create!(original_food_id: 114,diet_preference: 1, sub_id: 132)
-# SubstituteConnection.create!(original_food_id: 116,diet_preference: 1, sub_id: 132)
-# SubstituteConnection.create!(original_food_id: 117,diet_preference: 1, sub_id: 131)
-# SubstituteConnection.create!(original_food_id: 121,diet_preference: 1, sub_id: 6)
+# require '/capstone/db/big_oven_recipes.rb'
+
+# recipe_bigoven.each do |recipe|
+#   Recipe.create!(
+#                 id: recipe[:id],
+#                 chef: recipe[:chef], 
+#                 directions: recipe[:directions],
+#                 image_url: recipe[:image_url],
+#                 title: recipe[:title],
+#                 api_ref: recipe[:api_ref])
+
+#   ingredients_bigoven.each do |ingredient|
+#     Ingredient.create!(
+#                        id: ingredient[:id],
+#                        name: ingredient[:name],
+#                        api_ref: ingredient[:api_ref])
+#   end
+
+#   recipe_ingredient_joint.each do |join|
+#     RecipeIngredient.create!(
+#                             recipe_id: join[:recipe_id],
+#                             ingredient_id: join[:ingredient_id])
+#   end
+# end
+
+response = Unirest.get("https://api2.bigoven.com/recipes?include_primarycat=maindish&api_key=#{ENV['api_key']}&pg=2&&rpp=100", 
+  headers: { 'Accept' => 'application/json'}).body
+recipes = response["Results"]
+
+# recipe_bigoven = []
+# ingredients_bigoven = []
+# recipe_ingredient_join = []
+recipe_ids = []
+recipes.each do |recipe|
+  recipe_ids << recipe["RecipeID"]
+end
+
+# recipe_counter = 5
+# ingredient_counter = 132
 
 
-Recipes.create!
+recipe_ids.each do |recipe_id|
+  show_recipe = Unirest.get("https://api2.bigoven.com/recipe/#{recipe_id}?api_key=#{ENV['api_key']}", 
+    headers: { 'Accept' => 'application/json'}).body
+
+  recipe_hash = {}
+  recipe_hash[:title] = show_recipe["Title"]
+  recipe_hash[:chef] = show_recipe["Poster"]["UserName"] if show_recipe["Poster"]
+  recipe_hash[:directions] = show_recipe["Instructions"]
+  recipe_hash[:image_url] = show_recipe["ImageURL"]
+  recipe_hash[:api_ref] = show_recipe["RecipeID"]
+  # recipe_bigoven << recipe_hash
+  new_recipe = Recipe.create!(
+                id: recipe_hash[:id],
+                chef: recipe_hash[:chef], 
+                directions: recipe_hash[:directions],
+                image_url: recipe_hash[:image_url],
+                title: recipe_hash[:title],
+                api_ref: recipe_hash[:api_ref])
+
+  show_recipe["Ingredients"].each do |ingredient|
+
+    api_ingredient_name = ingredient['Name'].titleize
+    database_ingredients = Ingredient.all
+    @ingredient_object = nil
+
+    database_ingredients.each do |db_ing|
+      if api_ingredient_name.include?(db_ing.name)
+        @ingredient_object = db_ing
+        break
+      end
+    end
+
+    if !@ingredient_object
+      @ingredient_object = Ingredient.find_or_create_by(name: ingredient["Name"].titleize, api_ref: ingredient["IngredientID"])
+    end
+  
+    # recipe_ingredient_join << {recipe_id: recipe_hash[:id], ingredient_id: existing_ingredient[:id]}
+    recipe_ingredient = RecipeIngredient.create!(
+                            recipe_id: new_recipe.id,
+                            ingredient_id: @ingredient_object.id)
+    puts "****************************************"
+    puts recipe_ingredient.errors.full_messages
+    puts "****************************************"
+  end
+
+  p new_recipe
+  # recipe_bigoven << recipe_hash
+
+end
