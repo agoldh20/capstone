@@ -12,7 +12,7 @@ class Recipe < ApplicationRecord
         altered_directions.gsub!(/#{ingredient.name}/i, substitute_food.name)
       end
     end
-    altered_directions.split(".")
+    altered_directions.split(".").delete_if {|word| word.length <= 2 || word.include?("\r\n")}
   end
 
   def dairy_directions
@@ -23,11 +23,11 @@ class Recipe < ApplicationRecord
         altered_directions.gsub!(/#{ingredient.name}/i, substitute_food.name)
       end
     end
-   altered_directions.split(".")     
+   altered_directions.split(".").delete_if {|word| word.length <= 2 || word.include?("\r\n")}
   end
 
   def pretty_directions
-   directions.split(".")
+   directions.split(".").delete_if {|word| word.length <= 2 || word.include?("\r\n")}
   end
 
   def method_name
