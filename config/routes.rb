@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/' => 'recipes#index'
   get '/recipes' => 'recipes#index'
   
   get '/recipes/new' => 'recipes#new'
@@ -12,5 +11,7 @@ Rails.application.routes.draw do
 
   delete '/recipes/:id' => 'recipes#destroy'
 
+  get '/' => 'home#show'
+  get '/home' => 'home#show'
   get '/ingredients' => 'ingredients#index'
 end

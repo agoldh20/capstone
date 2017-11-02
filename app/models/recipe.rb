@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   has_many :joint_categories
   has_many :categories, through: :joint_categories
 
+  validates :title, uniqueness: true
+
   def meat_directions
     altered_directions = directions
     ingredients.each do |ingredient|
@@ -30,7 +32,4 @@ class Recipe < ApplicationRecord
    directions.split(".").delete_if {|word| word.length <= 2 || word.include?("\r\n")}
   end
 
-  def method_name
-    
-  end
 end

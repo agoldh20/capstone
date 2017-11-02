@@ -1,24 +1,69 @@
-<h2><%= @recipe.title %></h2>
-<img src= <%= @recipe.image_url %> >
+   <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h1 class="my-4"><%= @recipe.title %></h1>
+          <div class="list-group">
+            <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert to Flieshig</a>
+            <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert to Milchig</a>
+            <a href="#" class="list-group-item">Revert</a>
+            <br>
+            <br>
+            <h4>Ingredients:</h4>
+            <ul>
+            <% @ingredients.each do |ingredient| %>
+                <li>
+                <% if @diet_preference == "meat" && ingredient.meat_sub %>
+                  <h4><%= ingredient.meat_sub.name.titleize %></h4>
+                <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
+                  <h4><%= ingredient.dairy_sub.name.titleize %></h4>
+                <% else %>
+                  <h4><%= ingredient.name.titleize %></h4>
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+          <div class="card mt-4">
+            <!-- <div class="card-body"> -->
+            <img src="<%= @recipe.image_url %>" class="img-fluid">
+            <!-- </div> -->
+          </div>
+              <h4 class="chef-name">Created by Chef <%= @recipe.chef %></h4>
+
+         
+          <!-- /.card -->
+
+        
+           
+            
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+
+    </div>
+
+
+<!-- ========================================== -->
+
+
+
+
+<!-- <%=  link_to "Meat Substitute", "/recipes/#{ @recipe.id }?diet_preference=meat", class: "btn btn-danger" %><br>
+<%=  link_to "Dairy Substitute", "/recipes/#{ @recipe.id }?diet_preference=dairy", class: "btn btn-info" %>
 <br>
-<a href="/recipes/<%= @recipe.id %>?diet_preference=meat">Meat Substitute</a>
-<a href="/recipes/<%= @recipe.id %>?diet_preference=dairy">Dairy Substitute</a>
-<a href="/recipes/<%= @recipe.id %>">Revert</a>
+<button><a href="/recipes/<%= @recipe.id %>">Revert</a></button><br> -->
 <a href="<%= @recipe.image_url %>"></a>
-<h4>Created by Chef <%= @recipe.chef %></h4>
-<ul>
-<% @ingredients.each do |ingredient| %>
-    <li>
-    <% if @diet_preference == "meat" && ingredient.meat_sub %>
-      <h4><%= ingredient.meat_sub.name.titleize %></h4>
-    <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
-      <h4><%= ingredient.dairy_sub.name.titleize %></h4>
-    <% else %>
-      <h4><%= ingredient.name.titleize %></h4>
-    <% end %>
-</li>
-<% end %>
-</ul>
 <h3>Directions:</h3>
 <ol>
  <% @directions.each do |direction| %>
