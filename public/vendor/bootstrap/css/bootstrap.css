@@ -1833,6 +1833,10 @@ pre code {
   }
 }
 
+.recipe-text {
+
+  text-decoration-color: #896D48;
+}
 .table-responsive {
   display: block;
   width: 100%;
