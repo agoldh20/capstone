@@ -3,24 +3,25 @@
 
       <div class="row">
 
-        <div class="col-lg-3">
+        <div class="col-lg-4">
           <h1 class="my-4" style="color: #943F15; font: Verdana;"><%= @recipe.title %></h1>
           <div class="list-group">
-            <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert to Flieshig</a>
-            <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert to Milchig</a>
-            <a href="#" class="list-group-item">Revert</a>
+            <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert To Meat Friendly</a>
+            <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert To Dairy Friendly</a>
+            <a href="/recipes/<%= @recipe.id %>" class="btn btn-warning">Revert To The Original</a>
             <br>
-            <div class="recipe-text" style="color: #943F15; font: Verdana;">
+            <div class="recipe-text">
               <h4 >Ingredients:</h4>
               <ul>
               <% @ingredients.each do |ingredient| %>
-                  <li>
+                  <li class="adam-list adam-recipe-list adam">
+                  <i class="fa fa-spoon " aria-hidden="true"></i>
                   <% if @diet_preference == "meat" && ingredient.meat_sub %>
-                    <h4><%= ingredient.meat_sub.name.titleize %></h4>
+                    <%= ingredient.meat_sub.name.titleize %>
                   <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
-                    <h4><%= ingredient.dairy_sub.name.titleize %></h4>
+                    <%= ingredient.dairy_sub.name.titleize %>
                   <% else %>
-                    <h4><%= ingredient.name.titleize %></h4>
+                    <%= ingredient.name.titleize %>
                   <% end %>
                   </li>
                 <% end %>
@@ -28,30 +29,14 @@
             </div>
           </div>
         </div>
-        <!-- /.col-lg-3 -->
-
-        <div class="col-lg-9">
-          <div class="card mt-4">
-            <!-- <div class="card-body"> -->
-            <img src="<%= @recipe.image_url %>" class="img-fluid">
-            <!-- </div> -->
+          <div class="col-lg-8">
+            <div class="card mt-4">
+              <img src="<%= @recipe.image_url %>" class="img-fluid recipe-image">
+            </div>
+            <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>  
           </div>
-              <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>
-
-         
-          <!-- /.card -->
-
-        
-           
-            
-          </div>
-          <!-- /.card -->
-
         </div>
-        <!-- /.col-lg-9 -->
-
       </div>
-
     </div>
 
 
@@ -64,13 +49,15 @@
 <%=  link_to "Dairy Substitute", "/recipes/#{ @recipe.id }?diet_preference=dairy", class: "btn btn-info" %>
 <br>
 <button><a href="/recipes/<%= @recipe.id %>">Revert</a></button><br> -->
-<div style="color: #943F15;">
-  <a href="<%= @recipe.image_url %>"></a>
-  <h3>Directions:</h3>
-  <ol>
-   <% @directions.each do |direction| %>
-      <li><%= direction %></li>
-   <% end %>
-  </ol>
-</div>
+
+  <div class="directions-recipe">
+    <a href="<%= @recipe.image_url %>"></a>
+    <h3>Directions:</h3>
+    <ol>
+     <% @directions.each do |direction| %>
+        <li><%= direction %></li>
+     <% end %>
+    </ol>
+  </div>
+
 

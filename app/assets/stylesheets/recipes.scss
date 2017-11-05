@@ -3,5 +3,59 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-image: url('background_1.jpg')
+  background-image: url('background_1.jpg');
+  background-attachment: fixed;
 }
+
+.directions-recipe, .recipe-text {
+  color: #943F15 !important;
+  font-family: Verdana;
+}
+
+.navbar-color {
+  background-color: #B5AA8A;
+}
+
+.navbar-text {
+  color: #FFFFFF;
+  font-family: Verdana;
+}
+
+.navbar-text:hover {
+  color: #63593D;
+}
+
+h4.chef-name {
+  padding-left: 148px;
+}
+
+.directions-recipe {
+  padding-left: 50px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.recipe-image {
+  border-radius: 10px;
+  border: 2px solid #943f15;
+  width: 500px;
+}
+
+.btn-search {
+  background-color: #FFFAED;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+
+li.adam.adam-list.adam-recipe-list {
+   list-style-type: none;
+   font-size: 20px;
+}
+
+a.recipe-text {
+  font-size: 20px;
+}
+
+
+
+
+

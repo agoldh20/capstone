@@ -1,10 +1,11 @@
-<h1><u>Recipes</u></h1><br>
-<% if @search_term %>
-  <p>Filtered by the search term: <%= @search_term %></p>
-<% end %>
-
-<% @recipes.each do |recipe| %>
-  <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h2>
-  <h4>By Chef <%= recipe.chef %></h2><br>
-<% end %>
-
+<div class="recipe-text">
+  <h1 ><u>Recipes</u></h1><br>
+  <% if @search_term %>
+    <p >Filtered by "<%= @search_term %>" </p>
+  <% end %>
+  <% @recipes.each do |recipe| %>
+    <a class="recipe-text" href="/recipes/<%= recipe.id %>"><%= recipe.id %><%= recipe.title %></a><br>
+    By Chef <%= recipe.chef %><br>
+    <br>
+  <% end %>
+</div>

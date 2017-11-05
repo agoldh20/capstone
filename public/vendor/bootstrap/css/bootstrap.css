@@ -548,7 +548,7 @@ mark,
 }
 
 .img-fluid {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -2427,13 +2427,13 @@ fieldset[disabled] a.btn {
 }
 
 .btn-warning {
-  color: #111;
+  color: #fff !important;
   background-color: #ffc107;
   border-color: #ffc107;
 }
 
 .btn-warning:hover {
-  color: #111;
+  color: #fff;
   background-color: #e0a800;
   border-color: #d39e00;
 }
@@ -2449,7 +2449,7 @@ fieldset[disabled] a.btn {
 
 .btn-warning:not([disabled]):not(.disabled):active, .btn-warning:not([disabled]):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
-  color: #111;
+  color: #fff;
   background-color: #d39e00;
   border-color: #c69500;
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
@@ -4047,6 +4047,7 @@ tbody.collapse.show {
 }
 
 .card {
+  padding-left: 150px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -4054,9 +4055,7 @@ tbody.collapse.show {
       flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
 
@@ -4465,12 +4464,12 @@ tbody.collapse.show {
 }
 
 .badge-warning {
-  color: #111;
+  color: #fff;
   background-color: #ffc107;
 }
 
 .badge-warning[href]:focus, .badge-warning[href]:hover {
-  color: #111;
+  color: #fff;
   text-decoration: none;
   background-color: #d39e00;
 }
