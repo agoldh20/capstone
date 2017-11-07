@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   patch '/recipes/:id' => 'recipes#update'
 
   delete '/recipes/:id' => 'recipes#destroy'
-
-  get '/' => 'home#show'
-  get '/home' => 'home#show'
+  #=====================================
+  get '/' => 'home#index'
+  get '/categories' => 'home#show'
+  #=====================================
+  get '/about' => 'about#show'
+  #=====================================
   get '/ingredients' => 'ingredients#index'
 end

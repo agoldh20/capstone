@@ -7,6 +7,12 @@ class RecipesController < ApplicationController
       # @recipes = @recipes.where("title iLIKE ? OR chef iLIKE ?", "%#{@search_term}%", "%#{@search_term}%") #|| @recipe_ingredients.where("ingredients iLike ?", "%#{@search_term}%")
       @recipes = @recipes.joins(:ingredients).where("recipes.title iLIKE ? OR recipes.chef iLIKE ? OR ingredients.name iLike ?", "%#{@search_term}%", "%#{@search_term}%", "%#{@search_term}%").uniq
     end
+    
+    @category_attribute = params[:category]
+    if @category_attribute
+      @recipes = Category.find_by(genre: @category_attribute).recipes
+    end
+    
   end
 
   def show

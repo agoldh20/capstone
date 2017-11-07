@@ -1,11 +1,17 @@
 <div class="recipe-text">
-  <h1 ><u>Recipes</u></h1><br>
-  <% if @search_term %>
-    <p >Filtered by "<%= @search_term %>" </p>
-  <% end %>
-  <% @recipes.each do |recipe| %>
-    <a class="recipe-text" href="/recipes/<%= recipe.id %>"><%= recipe.id %><%= recipe.title %></a><br>
-    By Chef <%= recipe.chef %><br>
-    <br>
-  <% end %>
+<h1 style="padding-left: 12px;"><u>Recipes</u></h1><br>
+  <div class="recipe-container">
+    <% if @category_attribute %>
+      <h1 ><u><%= @category_attribute %> Recipes</u></h1><br>
+    <% else %>
+    <% end %>
+    <% if @search_term %>
+      <p >Filtered by "<%= @search_term %>" </p>
+    <% end %>
+    <% @recipes.each do |recipe| %>
+      <a class="recipe-text" href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><br>
+      By Chef <%= recipe.chef %><br>
+      <br>
+    <% end %>
+  </div>
 </div>
