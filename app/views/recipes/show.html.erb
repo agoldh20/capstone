@@ -9,20 +9,19 @@
             <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert To Meat Friendly</a>
             <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert To Dairy Friendly</a>
             <a href="/recipes/<%= @recipe.id %>" class="btn btn-warning">Revert To The Original</a>
+            <% if @diet_preference == nil %>
+              <a href="./pdf" class="btn btn-success">Print Recipe</a>
+            <% else %>
+              <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Print Recipe</a>
+            <% end %>
             <br>
             <div class="recipe-text">
               <h4 >Ingredients:</h4>
               <ul>
-              <% @ingredients.each do |ingredient| %>
+              <% @ingredient_names.each do |ingredient_name| %>
                   <li class="adam-list adam-recipe-list adam">
-                  <i class="fa fa-spoon " aria-hidden="true"></i>
-                  <% if @diet_preference == "meat" && ingredient.meat_sub %>
-                    <%= ingredient.meat_sub.name.titleize %>
-                  <% elsif @diet_preference == "dairy" && ingredient.dairy_sub %>
-                    <%= ingredient.dairy_sub.name.titleize %>
-                  <% else %>
-                    <%= ingredient.name.titleize %>
-                  <% end %>
+                    <i class="fa fa-spoon " aria-hidden="true"></i>
+                    <%= ingredient_name %>
                   </li>
                 <% end %>
               </ul>
@@ -48,5 +47,7 @@
      <% end %>
     </ol>
   </div>
+
+  
 
 

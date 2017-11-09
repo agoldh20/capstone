@@ -1,10 +1,10 @@
 <div class="recipe-text">
-<h1 style="padding-left: 12px;"><u>Recipes</u></h1><br>
-  <div class="recipe-container">
     <% if @category_attribute %>
       <h1 ><u><%= @category_attribute %> Recipes</u></h1><br>
     <% else %>
+      <h1><u>Recipes</u></h1><br>
     <% end %>
+  <div class="recipe-container">
     <% if @search_term %>
       <p >Filtered by "<%= @search_term %>" </p>
     <% end %>

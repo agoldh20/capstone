@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/recipes/' => 'recipes#create'
 
   get '/recipes/:id' => 'recipes#show'
+  get '/recipes/:id/pdf' => 'recipes#pdf'
   
   get '/recipes/:id/edit' => 'recipes#edit'
   patch '/recipes/:id' => 'recipes#update'
@@ -12,9 +13,8 @@ Rails.application.routes.draw do
   delete '/recipes/:id' => 'recipes#destroy'
   #=====================================
   get '/' => 'home#index'
-  get '/categories' => 'home#show'
-  #=====================================
-  get '/about' => 'about#show'
+  get '/about' => 'home#about'
+  get '/contact' => 'home#contact'
   #=====================================
   get '/ingredients' => 'ingredients#index'
 end

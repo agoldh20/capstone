@@ -18,16 +18,17 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @diet_preference = params[:diet_preference]
-    @ingredients = @recipe.ingredients
-    @directions = @recipe.directions
+    @ingredient_names = @recipe.modified_ingredients(@diet_preference)
+    @directions = @recipe.modified_directions(@diet_preference)
+  end
 
-    if @diet_preference == "meat"
-      @directions = @recipe.meat_directions
-    elsif @diet_preference == "dairy"
-      @directions = @recipe.dairy_directions
-    else
-      @directions = @recipe.pretty_directions
-    end
+  def pdf
+    @recipe = Recipe.find(params[:id])
+    pdf = @recipe.build_show_pdf(params[:diet_preference])
+    send_data pdf.render,
+          filename: "export.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
   end
 
 end

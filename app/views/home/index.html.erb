@@ -1,7 +1,57 @@
-<div id="category-list">
-  <ul>
-    <% @categories.each do |category| %>
-      <li><a href="/recipes/?category=<%= category.genre %>"  class="recipe-text"><%= category.genre %></a></li>
-    <% end %>
-  </ul>
+<div class="welcome recipe-text">
+  <h1>Welcome to K.eF.C.</h1>
+  <br>
 </div>
+<div class="row">
+  <!-- <div class="col-sm-2"><p></p></div> -->
+    <div class="about-text recipe-text">
+      <h2>Begin by Browsing Recipes by Categories</h2>
+    </div>
+  <!-- <div class="col-sm-2"><p></p></div>     -->
+</div>
+
+<div id="category-list">
+  <div class="row">
+    <div class="col-md-4 row">
+      <div class="col-md-3 col-xs-1"></div> 
+      <ul class="col-md-6 col-xs-10" id="row-1">
+        <li class="recipe-text"><strong>Meal Time</strong></li>
+        <li><a href="/recipes/?category=Breakfast" class="recipe-text">Breakfast</a></li>
+        <li><a href="/recipes/?category=Lunch" class="recipe-text">Lunch</a></li>
+        <li><a href="/recipes/?category=Dinner" class="recipe-text">Dinner</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4 row">
+      <div class="col-md-3 col-xs-1"></div> 
+      <ul class="col-md-6 col-xs-10" id="row-2">
+        <li class="recipe-text"><strong>Meal Type</strong></li>
+        <li><a href="/recipes/?category=Sandwich" class="recipe-text">Sandwich</a></li>
+        <li><a href="/recipes/?category=Soup" class="recipe-text">Soup</a></li>
+        <li><a href="/recipes/?category=Salad" class="recipe-text">Salad</a></li>
+        <li><a href="/recipes/?category=Pasta" class="recipe-text">Pasta</a></li>
+        <li><a href="/recipes/?category=Entree" class="recipe-text">Entree</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4 row">
+      <div class="col-md-3 col-xs-1"></div> 
+      <ul class="col-md-6 col-xs-10" id="row-3">
+        <li class="recipe-text"><strong>Cuisine</strong></li>
+        <li><a href="/recipes/?category=BBQ" class="recipe-text">BBQ</a></li>
+        <li><a href="/recipes/?category=Holiday" class="recipe-text">Holiday</a></li>
+        <li><a href="/recipes/?category=Italian" class="recipe-text">Italian</a></li>
+        <li><a href="/recipes/?category=American" class="recipe-text">American</a></li>
+        <li><a href="/recipes/?category=French" class="recipe-text">French</a></li>
+        <li><a href="/recipes/?category=Asian" class="recipe-text">Asian</a></li>
+        <li><a href="/recipes/?category=Mexican" class="recipe-text">Mexican</a></li>
+        <li><a href="/recipes/?category=South%20American" class="recipe-text">South American</a></li>
+        <li><a href="/recipes/?category=Middle Eastern" class="recipe-text">Middle Eastern</a></li>
+       </ul>
+     </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#footer').addClass('fixed-bottom');
+  })
+</script>

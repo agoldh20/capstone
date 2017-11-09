@@ -32,6 +32,7 @@ h4.chef-name {
 .directions-recipe {
   padding-left: 50px;
   background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
 }
 
 .recipe-image {
@@ -55,17 +56,77 @@ a.recipe-text {
   font-size: 20px;
 }
 
-.recipe-text#categorylist {
-  list-style-type: none;
-  color: #943F15 !important;
-  font-family: Verdana;
+#category-list {
+  li {
+    list-style: none;
+  }
 }
 
 .recipe-container {
   padding-left: 40px;
 }
 
+.about {
+  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
 
+}
+
+.recipe-text {
+  h1 {
+  padding-left: 12px;
+  }
+}
+
+.about {
+  strong {
+    font-size: 30px;
+  }
+  h2 {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+
+  }
+}
+
+.about-text {
+  text-align: center;
+  margin: 0 auto;
+
+  strong {
+    font-size: 30px;
+  }
+  h2 {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 0 15px;
+  }
+}
+
+.recipe-text.m-0.text-center {
+  strong {
+    font-size: 35px; 
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+  }
+}
+
+#category-list {
+  .col-md-4 {
+    #row-1, #row-2, #row-3 {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      border: 3px solid #F7BE31;
+    }
+    li.recipe-text {
+      strong {
+        font-size: 25px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
 
 
