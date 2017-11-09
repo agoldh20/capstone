@@ -59,13 +59,15 @@ class Recipe < ApplicationRecord
   def build_show_pdf(preference)
     pdf = Prawn::Document.new
     pdf.image open(image_url), :width => 300, :height => 200
-
+    pdf.move_down 10
     pdf.formatted_text [{ :text => "#{title}", :styles => [:bold], :size => 20 }]
     pdf.text "Converted to #{preference.capitalize} Friendly" if preference
+    pdf.move_down 10
     pdf.formatted_text [{ :text => "Ingredients:", :styles => [:bold, :underline] }]
     modified_ingredients(preference).each do |ingredient_name|
       pdf.text "#{ingredient_name}"
     end
+    pdf.move_down 10
     pdf.formatted_text [{ :text => "Directions:", :styles => [:bold, :underline] }]
     modified_directions(preference).each_with_index do |direction, index|
       pdf.text "#{index + 1}. #{direction}"
