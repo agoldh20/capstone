@@ -1,9 +1,4 @@
 require 'open-uri'
-# module PrawnImage
-#   def generate_image
-#     image 
-#   end
-# end
 
 class Recipe < ApplicationRecord
   has_many :recipe_ingredients
@@ -72,8 +67,8 @@ class Recipe < ApplicationRecord
       pdf.text "#{ingredient_name}"
     end
     pdf.formatted_text [{ :text => "Directions:", :styles => [:bold, :underline] }]
-    modified_directions(preference).each do |direction|
-      pdf.text "#{direction}"
+    modified_directions(preference).each_with_index do |direction, index|
+      pdf.text "#{index + 1}. #{direction}"
     end
 
     pdf
