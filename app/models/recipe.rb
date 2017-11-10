@@ -56,6 +56,7 @@ class Recipe < ApplicationRecord
     end
   end
 
+
   def build_show_pdf(preference)
     pdf = Prawn::Document.new
     pdf.image open(image_url), :width => 300, :height => 200
