@@ -12,7 +12,7 @@
             <% if @diet_preference == nil %>
               <a href="./<%= @recipe.id %>/pdf" class="btn btn-success">Printer Friendly Version</a>
             <% else %>
-              <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Print Recipe</a>
+              <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Printer Friendly Version</a>
             <% end %>
             <br>
             <div class="recipe-text">
