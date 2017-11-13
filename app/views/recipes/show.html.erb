@@ -32,7 +32,8 @@
             <div class="card mt-4">
               <img src="<%= @recipe.image_url %>" class="img-fluid recipe-image">
             </div>
-            <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>  
+            <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>
+            
           </div>
         </div>
       </div>
@@ -40,6 +41,15 @@
 
   <div class="directions-recipe">
     <a href="<%= @recipe.image_url %>"></a>
+    <div class="timer">
+              <input type="text" name="minutes" id="minutes" placeholder="Minutes">
+              <% if  current_user %>
+                <input type="hidden" name="recip_number" id="phone">
+              <% else %>
+                <input type="text" name="recip_number" id="phone" placeholder="Phone Number">
+              <% end %>
+              <button class="btn-menu" onclick="sendText()">Set A SMS Timer</button>
+            </div>
     <h3>Directions:</h3>
     <ol>
      <% @directions.each do |direction| %>
@@ -48,6 +58,22 @@
     </ol>
   </div>
 
+<script type="text/javascript">
+  function sendText() {
+    var minutes = $('#minutes').val()
+    var phone = $('#phone').val()
+
+    $.ajax({
+      method: "POST",
+      url: "/send_text",
+      headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+      data: { minutes: minutes, recip_number: phone }
+    })
+      .done(function( msg ) {
+        alert( "Your SMS timer for " + minutes + " minutes is set" );
+      });
+  }
+</script>
   
 
 

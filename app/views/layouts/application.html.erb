@@ -28,9 +28,13 @@
     <nav class="navbar navbar-expand-lg navbar-color fixed-top">
       <div class="container">
         <a class="navbar-brand navbar-text" href="/">Kosher eFriendly Converter</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="welcome-text">
+          <% if current_user %>
+            Welcome, <%= current_user.first_name.capitalize %>
+          <% else %>
+            <a class="nav-link welcome-text signup-link" style="" href="/signup">Welcome to K.eF.C., care to Sign Up?</a>
+          <% end %>
+        </div>
         <!-- <form class="navbar-form navbar-left"> -->
           <%= form_tag "/recipes", method: :get, class: "navbar-form navbar-left" do %>
             <div class="search form-inline">
@@ -39,19 +43,22 @@
             </div>
           <% end %>
         <!-- </form> -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link navbar-text" href="/">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar-text" href="/about">What is Kosher?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar-text" href="/contact">Contact</a>
-            </li>
+        <div class="dropdown" id="top-navbar-dropdown">
+          <button class="btn btn-default btn-menu dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Menu
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu shifted-right" aria-labelledby="dropdownMenuDivider">
+            <li><a class="nav-link recipe-text" href="/">Home</a></li>
+            <li><a class="nav-link recipe-text" href="/about">What is Kosher?</a></li>
+            <li><a class="nav-link recipe-text" href="/contact">Contact</a></li>
+            <li role="separator" class="divider"></li>
+            <% if current_user %>
+              <li><a class="nav-link recipe-text" href="/logout">Log Out</a></li>
+            <% else %>
+              <li><a class="nav-link recipe-text" href="/login">Log In</a></li>
+              <li><a class="nav-link recipe-text" href="/signup">Sign Up!</a></li>
+            <% end %>
           </ul>
         </div>
       </div>

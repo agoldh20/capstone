@@ -30,4 +30,14 @@ class RecipesController < ApplicationController
           disposition: 'inline'
   end
 
+  def send_text
+    minutes = params[:minutes].to_i
+    if current_user
+      CookingTimerJob.set(wait: minutes.minutes).perform_later(current_user.phone_number)
+    else
+      CookingTimerJob.set(wait: minutes.minutes).perform_later(params[:recip_number])
+    end
+    render json: { message: "Your SMS Timer has been set" }, code: 200
+  end
+
 end

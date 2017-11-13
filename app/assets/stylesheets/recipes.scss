@@ -19,11 +19,41 @@ body {
 .navbar-text {
   color: #FFFFFF;
   font-family: Verdana;
+  margin-left: -70px;
 }
 
 .navbar-text:hover {
   color: #63593D;
 }
+
+.welcome-text {
+  color: #FFFFFF;
+  font-family: Verdana;
+  margin-top: 2px;
+  font-size: 15px;
+}
+
+.signup-link:hover {
+  color: #63593D;
+}
+
+.shifted-right.dropdown-menu {
+  left: auto;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.9);
+
+  .recipe-text {
+    font-size: 15px;
+  }
+}
+
+#top-navbar-dropdown {
+  margin-right: -40px;
+  width: 275px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 h4.chef-name {
   padding-left: 148px;
@@ -41,10 +71,17 @@ h4.chef-name {
   width: 500px;
 }
 
+.btn-menu {
+  background-color: #FFFAED;
+  border-radius: 10px;
+
+}
+
 .btn-search {
   background-color: #FFFAED;
   padding: 0px 10px;
   border-radius: 10px;
+  margin-left: 4px;
 }
 
 li.adam.adam-list.adam-recipe-list {
@@ -126,6 +163,10 @@ a.recipe-text {
       }
     }
   }
+}
+
+.nav-link {
+  padding: 0.2rem 1rem;
 }
 
 

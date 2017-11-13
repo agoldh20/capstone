@@ -17,4 +17,15 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   #=====================================
   get '/ingredients' => 'ingredients#index'
+  #=====================================
+  post '/send_text' => 'recipes#send_text'
+  #=====================================
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  #=====================================
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  
+  get '/logout' => 'sessions#destroy'
+
 end
