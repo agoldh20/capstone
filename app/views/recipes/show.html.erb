@@ -10,7 +10,7 @@
             <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert To Dairy Friendly</a>
             <a href="/recipes/<%= @recipe.id %>" class="btn btn-warning">Revert To The Original</a>
             <% if @diet_preference == nil %>
-              <a href="./pdf" class="btn btn-success">Print Recipe</a>
+              <a href="./<%= @recipe.id %>/pdf" class="btn btn-success">Printer Friendly Version</a>
             <% else %>
               <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Print Recipe</a>
             <% end %>
