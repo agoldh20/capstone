@@ -59,7 +59,7 @@ class Recipe < ApplicationRecord
 
   def build_show_pdf(preference)
     pdf = Prawn::Document.new
-    pdf.image open(image_url), :width => 300, :height => 200
+    pdf.image open(image_url), :width => 300, :height => 200 rescue pdf.text "No Image Available"
     pdf.move_down 10
     pdf.formatted_text [{ :text => "#{title}", :styles => [:bold], :size => 20 }]
     pdf.text "Converted to #{preference.capitalize} Friendly" if preference
