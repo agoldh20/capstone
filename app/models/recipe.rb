@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
   has_many :joint_categories
   has_many :categories, through: :joint_categories
 
-  # validates :title, uniqueness: true
+  validates :title, uniqueness: true
 
   def meat_directions
     altered_directions = directions
