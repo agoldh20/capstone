@@ -30,7 +30,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'prawn'
 gem 'twilio-ruby', '~> 5.4.5'
-gem 'sidekiq'
 # gem 'open-uri'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
