@@ -1,62 +1,62 @@
    <!-- Page Content -->
-    <div class="container">
+   <div class="container">
 
-      <div class="row">
+    <div class="row">
 
-        <div class="col-lg-4">
-          <h1 class="my-4" style="color: #943F15; font: Verdana;"><%= @recipe.title %></h1>
-          <div class="list-group">
-            <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert To Meat Friendly</a>
-            <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert To Dairy Friendly</a>
-            <a href="/recipes/<%= @recipe.id %>" class="btn btn-warning">Revert To The Original</a>
-            <% if @diet_preference == nil %>
-              <a href="./<%= @recipe.id %>/pdf" class="btn btn-success">Printer Friendly Version</a>
-            <% else %>
-              <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Printer Friendly Version</a>
-            <% end %>
-            <br>
-            <div class="recipe-text">
-              <h4 >Ingredients:</h4>
-              <ul>
+      <div class="col-lg-4">
+        <h1 class="my-4" style="color: #943F15; font: Verdana;"><%= @recipe.title %></h1>
+        <div class="list-group">
+          <a href="/recipes/<%= @recipe.id %>?diet_preference=meat" class="btn btn-danger">Convert To Meat Friendly</a>
+          <a href="/recipes/<%= @recipe.id %>?diet_preference=dairy" class="btn btn-info">Convert To Dairy Friendly</a>
+          <a href="/recipes/<%= @recipe.id %>" class="btn btn-warning">Revert To The Original</a>
+          <% if @diet_preference == nil %>
+          <a href="./<%= @recipe.id %>/pdf" class="btn btn-success">Printer Friendly Version</a>
+          <% else %>
+          <a href="./<%= @recipe.id %>/pdf/?diet_preference=<%= @diet_preference %>" class="btn btn-success">Printer Friendly Version</a>
+          <% end %>
+          <br>
+          <div class="recipe-text">
+            <h4 >Ingredients:</h4>
+            <ul>
               <% @ingredient_names.each do |ingredient_name| %>
-                  <li class="adam-list adam-recipe-list adam">
-                    <i class="fa fa-spoon " aria-hidden="true"></i>
-                    <%= ingredient_name %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-          <div class="col-lg-8">
-            <div class="card mt-4">
-              <img src="<%= @recipe.image_url %>" class="img-fluid recipe-image">
-            </div>
-            <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>
-            
+              <li class="adam-list adam-recipe-list adam">
+                <i class="fa fa-spoon " aria-hidden="true"></i>
+                <%= ingredient_name %>
+              </li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+      <div class="col-lg-8">
+        <div class="card mt-4">
+          <img src="<%= @recipe.image_url %>" class="img-fluid recipe-image">
+        </div>
+        <h4 class="chef-name" style="color: #943F15; font: Verdana;">Created by Chef <%= @recipe.chef %></h4>
 
-  <div class="directions-recipe">
-    <a href="<%= @recipe.image_url %>"></a>
-    <div class="timer">
-              <input type="text" name="minutes" id="minutes" placeholder="Minutes">
-              <% if  current_user %>
-                <input type="hidden" name="recip_number" id="phone">
-              <% else %>
-                <input type="text" name="recip_number" id="phone" placeholder="Phone Number">
-              <% end %>
-              <button class="btn-menu" onclick="sendText()">Set A SMS Timer</button>
-            </div>
-    <h3>Directions:</h3>
-    <ol>
-     <% @directions.each do |direction| %>
-        <li><%= direction %></li>
-     <% end %>
-    </ol>
+      </div>
+    </div>
   </div>
+  
+
+<div class="directions-recipe">
+  <a href="<%= @recipe.image_url %>"></a>
+  <div class="timer">
+    <input type="text" name="minutes" id="minutes" placeholder="Minutes">
+    <% if  current_user %>
+    <input type="hidden" name="recip_number" id="phone">
+    <% else %>
+    <input type="text" name="recip_number" id="phone" placeholder="Phone Number">
+    <% end %>
+    <button class="btn-menu" onclick="sendText()">Set A SMS Timer</button>
+  </div>
+  <h3>Directions:</h3>
+  <ol>
+   <% @directions.each do |direction| %>
+   <li><%= direction %></li>
+   <% end %>
+ </ol>
+</div>
 
 <script type="text/javascript">
   function sendText() {
@@ -69,11 +69,11 @@
       headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
       data: { minutes: minutes, recip_number: phone }
     })
-      .done(function( msg ) {
-        alert( "Your SMS timer for " + minutes + " minutes is set" );
-      });
+    .done(function( msg ) {
+      alert( "Your SMS timer for " + minutes + " minutes is set" );
+    });
   }
 </script>
-  
+
 
 

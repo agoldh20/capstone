@@ -133,7 +133,6 @@ a.recipe-text {
 }
 .recipe-text.welcome {
   h1 {
-    margin-top: 20px;
     margin-left: 10px;
   }
 }
@@ -178,4 +177,9 @@ a.recipe-text {
 
 .nav-link {
   padding: 0.2rem 1rem;
+}
+
+.main-content-div {
+  margin-top: 20px;
+  min-height: 700px;
 }
